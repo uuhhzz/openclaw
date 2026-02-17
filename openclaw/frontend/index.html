@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw - AI Code Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none">
+          <path d="M16 2L4 8v16l12 6 12-6V8L16 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M16 10c-2 0-3 1-3 3v6c0 2 1 3 3 3s3-1 3-3v-6c0-2-1-3-3-3z" fill="currentColor"/>
+          <path d="M10 16c0-3 1.5-5 6-5s6 2 6 5-1.5 5-6 5-6-2-6-5z" fill="currentColor" opacity="0.6"/>
+        </svg>
+        <span class="logo-text">OpenClaw</span>
+      </div>
+      <nav class="nav">
+        <a href="#" class="nav-link active">首页</a>
+        <a href="#features" class="nav-link">功能</a>
+        <a href="#about" class="nav-link">关于</a>
+        <a href="https://github.com/uuhhzz/openclaw" class="nav-link github-link" target="_blank">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+          <div class="badge">AI Powered</div>
+          <h1 class="hero-title">
+            智能代码助手<br>
+            <span class="gradient-text">OpenClaw</span>
+          </h1>
+          <p class="hero-desc">
+            强大的 AI 驱动代码生成与调试工具，助你快速构建优质项目
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="showDemo()">
+              <span>开始使用</span>
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
+              </svg>
+            </button>
+            <button class="btn btn-secondary" onclick="window.open('https://github.com/uuhhzz/openclaw', '_blank')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="code-window">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="code-title">main.py</span>
+            </div>
+            <pre class="code-content"><code><span class="keyword">import</span> openclaw
+
+<span class="comment"># 创建 AI 助手</span>
+assistant = openclaw.<span class="function">Assistant</span>(model=<span class="string">"gpt-4"</span>)
+
+<span class="comment"># 生成代码</span>
+code = assistant.<span class="function">generate</span>(
+    prompt=<span class="string">"创建一个 Python Web 服务器"</span>
+)
+
+<span class="comment"># 调试代码</span>
+assistant.<span class="function">debug</span>(code)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <h2 class="section-title">核心功能</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+              </svg>
+            </div>
+            <h3>智能代码生成</h3>
+            <p>基于 AI 的代码生成，支持多种编程语言，快速构建项目框架</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8v4M12 16h.01"/>
+              </svg>
+            </div>
+            <h3>自动调试</h3>
+            <p>智能识别代码问题，提供修复建议，快速定位并解决 bug</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3>代码优化</h3>
+            <p>分析代码性能，提供优化建议，提升代码质量</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>多语言支持</h3>
+            <p>支持 Python, JavaScript, TypeScript, Go, Rust 等主流语言</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="about-content">
+          <h2>关于 OpenClaw</h2>
+          <p>OpenClaw 是一个开源的 AI 代码助手项目，致力于让开发者更高效地编写和调试代码。我们相信 AI 应该成为开发者的强大助手，而不是替代者。</p>
+          <div class="stats">
+            <div class="stat">
+              <span class="stat-value">开源免费</span>
+              <span class="stat-label">MIT 许可证</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">AI 驱动</span>
+              <span class="stat-label">智能辅助</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">持续更新</span>
+              <span class="stat-label">活跃开发</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 OpenClaw. Built with ❤️ by <a href="https://github.com/uuhhzz" target="_blank">uuhhzz</a></p>
+    </footer>
+  </div>
+
+  <div class="modal" id="demoModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeDemo()">&times;</button>
+      <h3>即将上线</h3>
+      <p>功能开发中，敬请期待...</p>
+    </div>
+  </div>
+
+  <script src="src/script.js"></script>
+</body>
+</html>
