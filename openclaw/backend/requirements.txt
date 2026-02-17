@@ -1,2 +1,0 @@
-# OpenClaw - AI Code Assistant
-openclaw
